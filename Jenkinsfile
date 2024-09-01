@@ -1,10 +1,22 @@
 pipeline{
-  agents {
-    docker true }
+agent {
+  dockerfile {
+    filename 'Dockerfile'
+  }
+}
+
   stages{
-  stage('clone'){
+    stage{
+      stage('Clean workspace '){
+        steps{
+          cleanWS()
+        }
+      }
+    }
+  stage('clone github repo'){
     steps{
-      bat '''git clone https://github.com/yutika-codes/2349_DockerJenkins.git'''
+      git branch: 'main',
+          url: ''
     }
   }
     stage('Build'){
