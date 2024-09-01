@@ -6,13 +6,12 @@ agent {
 }
 
   stages{
-    stage{
       stage('Clean workspace '){
         steps{
           cleanWS()
         }
       }
-    }
+    
   stage('clone github repo'){
     steps{
       git branch: 'main',
