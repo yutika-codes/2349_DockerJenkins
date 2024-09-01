@@ -16,7 +16,7 @@ agent {
   stage('clone github repo'){
     steps{
       git branch: 'main',
-          url: ''
+          url: 'https://github.com/yutika-codes/2349_DockerJenkins.git'
     }
   }
     stage('Build'){
